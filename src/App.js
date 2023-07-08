@@ -80,18 +80,17 @@ const App = () => {
                 name : data.name,
                 correct : correct
               }
-              axios.patch(api+"/crnn/correct",mydata,{
+              axios.patch(api+"/crnn/correct",mydata,{headers:{
                 'Accept': '*/*',
                 'Content-Type': 'application/json'
-              })
+              }})
               .then((res)=>{
                 console.log(res.data)
                 alert(res.data.command)
                 setTriger(false)
               })
               .catch((err)=>{
-                console.log(err)
-                // alert(err.response.data.message)
+                alert(err.response.data.message)
               })
             }}
             >
