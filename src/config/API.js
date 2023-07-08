@@ -11,6 +11,7 @@
 // export const path = url+"/blogger/single/"
 export const config = {
 	headers: {
+		'Accept': '*/*',
 		'Content-Type': 'application/json'
 	}
 }
