@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import './styles/tailwind.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { TerminalContextProvider } from "react-terminal";
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <TerminalContextProvider>
+    <React.StrictMode>
+        <App />
+      </React.StrictMode>
+  </TerminalContextProvider>
+  ,
   document.getElementById('root')
 );
 

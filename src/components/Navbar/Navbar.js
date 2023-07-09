@@ -1,32 +1,34 @@
+import { useNavigate } from 'react-router-dom'
+import { navbarData } from './data'
 import React from 'react'
-import LeftChat from './LeftChat'
-import RightChat from './RightChat'
 
 const Navbar = () => {
+    const navigate = useNavigate()
   return (
-    <div className='w-full h-full'>
-        <div className='w-12/12 h-16 m-auto bg-gray-400'>
-            <div className='w-11/12 m-auto grid grid-cols-2'>
-                <img src="https://blogger.zilog.online/static/media/logo.436f1557.png" 
-                className='w-16 h-16 p-2'/>
-                <p className='text-right'>chat app</p>
-            </div>
+    <nav>
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 bg-gray-900 fixed">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center">
+            <a href="/" className="text-white font-bold text-lg">
+              <img src="https://blogger.zilog.online/static/media/logo.436f1557.png"
+              className='w-1/12'
+              />
+            </a>
+          </div>
+
+          <div className="flex">
+            {navbarData.map((data,index)=>(
+              <a 
+              key={index}
+              onClick={()=>navigate(data.path)}
+              className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                {data.name}
+              </a>
+            ))}
+          </div>
         </div>
-        <div className='w-11/12 h-20 m-auto rounded grid grid-cols-3'>
-            <div className="h-96">
-                <div className='w-11/12 m-auto'>
-                    <input
-                    className='w-full mt-5 mb-5 rounded h-10 text-center border-2 border-black'
-                    placeholder='Search'
-                    />
-                </div>
-                <LeftChat/>
-            </div>
-            <div className='col-span-2 h-96'>
-                <RightChat/>
-            </div>
-        </div>
-    </div>
+      </div>
+    </nav>
   )
 }
 

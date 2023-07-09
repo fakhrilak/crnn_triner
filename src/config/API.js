@@ -1,4 +1,4 @@
-// let url = "http://192.168.100.170:7001"
+export let url = "http://192.168.100.170:7001/api/v4"
 // export const API = axios.create({baseURL: url+`/blogger`});
 // // Alter defaults after instance has been created
 // export const setAuthToken = (token) => {
