@@ -2,12 +2,12 @@ import axios from 'axios';
 import React from 'react'
 import { ReactTerminal } from "react-terminal";
 import { config, url } from '../../config/API';
-const MyTerminal = () => {
+const MyTerminal = (props) => {
     const commands = {
         whoami: "IAM ZILOG",
-        ls: async(params) => {
+        zilog: async(params) => {
             let mystr=""
-            await axios.post(`${url}/mycmd`,{command:params},config)
+            await axios.post(`${props.api}/mycmd`,{command:params},config)
             .then((res)=>{
                 console.log(res.data.data)
                 

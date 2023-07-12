@@ -20,13 +20,14 @@ const CompLogs = (props) => {
             <button
             className='col-span-2 bg-gray-600 text-white rounded'
             onClick={()=>{
-                axios.get(`${url}/img/list/${path}`,config)
+                axios.get(`${props.api}/img/list/${path}`,config)
                 .then((res)=>{
                     // console.log(res.data)
                     setData(res.data.data)
                 })
                 .catch((err)=>{
-                    alert(err.response.data)
+                    // alert(err.response.data)
+                    console.log(err)
                 })
             }}
             >
@@ -49,8 +50,8 @@ const CompLogs = (props) => {
         {data && show &&<div className='grid grid-cols-3 gap-2 mt-5'>
             {data.map((data,index)=>(
                 <div key={index} className='cursor-pointer'>
-                    <img src={url+"/img/plat/"+path+"/"+data}/>
-                    <Demo model={model} img={path+"/"+data}/>
+                    <img src={props.api+"/img/plat/"+path+"/"+data}/>
+                    <Demo model={model} img={path+"/"+data} api={props.api}/>
                 </div>
             ))}
         </div>}

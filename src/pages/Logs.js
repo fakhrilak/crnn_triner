@@ -25,11 +25,11 @@ const Logs = () => {
       </div>
       <div className='grid grid-cols-2 w-11/12 m-auto gap-5'>
             {sumlog.map((data,index)=>(
-                <CompLogs index={index} key={index} data={data}/>
+                <CompLogs index={index} key={index} data={data} api={api}/>
             ))}
       </div>
       <div className='w-10/12 m-auto mt-44'>
-        <MyTerminal/>
+        <MyTerminal api={api}/>
       </div>
     </div>
   )
