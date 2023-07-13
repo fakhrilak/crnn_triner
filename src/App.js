@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Predict from './pages/Predict';
 import Navbar from './components/Navbar/Navbar';
 import Logs from './pages/Logs';
+import Difference from './pages/Difference';
 const App = () => {
   
 
@@ -16,6 +17,7 @@ const App = () => {
         <Routes>
           <Route  path='/' element={<Predict/>}/>
           <Route path="/log" element={<Logs/>}/>
+          <Route path='/difference' element={<Difference/>}/>
         </Routes>
       </Router>
     {/* // </div> */}
