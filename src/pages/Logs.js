@@ -28,9 +28,6 @@ const Logs = () => {
                 <CompLogs index={index} key={index} data={data} api={api}/>
             ))}
       </div>
-      <div className='w-10/12 m-auto mt-44'>
-        <MyTerminal api={api}/>
-      </div>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import Predict from './pages/Predict';
 import Navbar from './components/Navbar/Navbar';
 import Logs from './pages/Logs';
 import Difference from './pages/Difference';
+import Cmd from './pages/Cmd';
 const App = () => {
   
 
@@ -18,6 +19,7 @@ const App = () => {
           <Route  path='/' element={<Predict/>}/>
           <Route path="/log" element={<Logs/>}/>
           <Route path='/difference' element={<Difference/>}/>
+          <Route path='/cmd' element={<Cmd/>}/>
         </Routes>
       </Router>
     {/* // </div> */}
